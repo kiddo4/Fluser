@@ -1,5 +1,5 @@
 import 'dart:io';
-import 'dart:math';
+import 'dart:convert';
 
 class SEOOptimizer {
   final String sitemapFilePath = 'sitemap.xml';
@@ -33,7 +33,6 @@ class SEOOptimizer {
   void analyzeContent(String content) {
     print('Analyzing content for SEO best practices...');
 
-    // Example checks
     int keywordCount = _countKeywords(content, 'Flutter');
     double keywordDensity = _calculateKeywordDensity(content, 'Flutter');
 
@@ -47,7 +46,6 @@ class SEOOptimizer {
           'Keyword density is high; consider reducing usage to avoid keyword stuffing.');
     }
 
-    // Check for readability (simple check)
     if (_isReadable(content)) {
       print('Content is readable.');
     } else {
@@ -92,7 +90,6 @@ class SEOOptimizer {
   }
 
   bool _isReadable(String content) {
-    // Simple readability check based on average sentence length
     List<String> sentences = content.split(RegExp(r'[.!?]'));
     int totalWords = content.split(RegExp(r'\s+')).length;
     double averageSentenceLength = totalWords / sentences.length;
