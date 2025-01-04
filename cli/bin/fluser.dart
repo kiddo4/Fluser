@@ -54,11 +54,9 @@ void createProject(String projectName) {
     return;
   }
 
-  // Create project directory
   projectDir.createSync();
   print('Created project directory: $projectName');
 
-  // Create subdirectories
   Directory('${projectDir.path}/lib').createSync(recursive: true);
   Directory('${projectDir.path}/server/src').createSync(recursive: true);
   Directory('${projectDir.path}/client/lib').createSync(recursive: true);
@@ -91,10 +89,7 @@ void main() {
 }
 
 void serveProject() {
-  // Logic to start the development server
   print('Starting the Fluser development server...');
-
-  // Here you would typically start the server and enable hot reload
   Process.run('dart', ['server/src/main.dart']).then((result) {
     print(result.stdout);
     print(result.stderr);
@@ -102,19 +97,16 @@ void serveProject() {
 }
 
 void buildProject() {
-  // Logic to build the project for production
   print('Building the Fluser project for production...');
-  // Here you would typically compile the project and optimize assets
+  // Implement build logic here
 }
 
 void analyzeSEO() {
-  // Logic to analyze the project for SEO best practices
   print('Analyzing the Fluser project for SEO...');
-  // Here you would typically run SEO checks and provide feedback
+  // Implement SEO analysis logic here
 }
 
 void prerenderPages() {
-  // Logic to trigger the pre-rendering of static pages
   print('Rendering static pages...');
-  // Here you would typically call the PreRenderService to render pages
+  // Implement pre-rendering logic here
 }
